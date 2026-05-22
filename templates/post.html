@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {% include "partials/head.html" %}
+    <title>{{ post.title }} · {{ config.siteName }}</title>
+    <meta name="description" content="{{ post.description }}">
+    <meta name="og:description" content="{{ post.description }}">
+    <meta name="twitter:site" content="{{ config.siteName }}">
+    <meta name="twitter:title" content="{{ post.title }}">
+    <meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+    <div id="stage" class="container">
+        <div class="row">
+            {% include "partials/sidebar.html" %}
+            <div id="main-container" class="col-sm-9 col-xs-12 main-container invisible">
+                <div class="autopagerize_page_element">
+                    <div class="content">
+                        <div class="post-page">
+                            {% set is_detail = true %}
+                            {% include "partials/post-card.html" %}
+                            
+                            {% include "partials/share.html" %}
+                            
+                            {% include "partials/post-nav.html" %}
+                            
+                            {% include "partials/comments.html" %}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="visible-xs site-bottom-footer">
+                    {% include "partials/footer.html" %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/jquery-3.1.0.min.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/scripts/jquery.appear.js"></script>
+    <script src="/scripts/typography.js"></script>
+</body>
+</html>
