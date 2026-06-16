@@ -28,4 +28,20 @@
 <link rel="stylesheet" href="/styles/style.css">
 {% endif %}
 
-<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/feed.xml">
+
+{% if theme_config.analyticsProvider == "google" and theme_config.googleAnalyticsId %}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_config.googleAnalyticsId }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ theme_config.googleAnalyticsId }}');
+</script>
+{% endif %}
+
+{% if theme_config.analyticsProvider == "umami" and theme_config.umamiScriptUrl and theme_config.umamiWebsiteId %}
+<!-- Umami Analytics -->
+<script defer src="{{ theme_config.umamiScriptUrl }}" data-website-id="{{ theme_config.umamiWebsiteId }}"></script>
+{% endif %}

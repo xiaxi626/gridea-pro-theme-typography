@@ -1,6 +1,6 @@
 {
   "name": "typography",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Makito (Ported to Gridea Pro)",
   "engine": "jinja2",
   "templateEngine": "jinja2",
@@ -120,6 +120,43 @@
       "group": "社交链接",
       "value": true,
       "type": "toggle"
+    },
+    {
+      "name": "analyticsProvider",
+      "label": "统计工具",
+      "group": "统计与追踪",
+      "value": "none",
+      "type": "select",
+      "options": [
+        { "label": "不启用", "value": "none" },
+        { "label": "Google Analytics", "value": "google" },
+        { "label": "Umami Analytics", "value": "umami" }
+      ],
+      "note": "选择网站统计工具"
+    },
+    {
+      "name": "googleAnalyticsId",
+      "label": "Google Analytics 测量 ID",
+      "group": "统计与追踪",
+      "value": "",
+      "type": "input",
+      "note": "格式如 G-XXXXXXXXXX，选择 Google Analytics 时必填"
+    },
+    {
+      "name": "umamiScriptUrl",
+      "label": "Umami 脚本地址",
+      "group": "统计与追踪",
+      "value": "",
+      "type": "input",
+      "note": "如 https://umami.example.com/script.js，选择 Umami 时必填"
+    },
+    {
+      "name": "umamiWebsiteId",
+      "label": "Umami 网站 ID",
+      "group": "统计与追踪",
+      "value": "",
+      "type": "input",
+      "note": "选择 Umami 时必填"
     }
   ]
 }
