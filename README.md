@@ -30,7 +30,8 @@
 | 入场动画 | ✅ | fadeInDown 动画 + jQuery Appear 滚动触发 |
 | 评论系统 | ⚠️ | 通过 Gridea Pro 运行时注入，**尚未独立验证** |
 | 自定义导航菜单 | ✅ | 支持自定义 menus，未配置时回退到默认导航 |
-| Google Analytics | ❌ | 已移除（原 Hexo 版通过外部 JS 文件集成） |
+| Google Analytics | ✅ | 支持 Google Analytics 统计|
+| Umami Analytics | ✅ | 支持自托管 Umami 统计 |
 | 多语言 i18n | ❌ | 已移除（原 Hexo 版支持 4 种语言） |
 | 代码语法高亮 | ❌ | 已移除（原 Hexo 版通过 hexo-prism-plugin 实现，Gridea Pro 自带） |
 | SCSS 源码编译 | ❌ | 已移除（直接使用编译后的 CSS） |
@@ -83,7 +84,7 @@
 
 ## 配置项说明
 
-主题提供 **14 个可配置项**，分为 3 组，均可在 Gridea Pro 主题设置面板中调整：
+主题提供 **19 个可配置项**，分为 4 组，均可在 Gridea Pro 主题设置面板中调整：
 
 ### 基础设置
 
@@ -115,6 +116,15 @@
 | 微博 UID | 输入框 | (空) | 留空则不显示图标 |
 | 启用 RSS | 开关 | 开启 | 导航栏显示 RSS 图标 |
 
+### 统计与追踪
+
+| 配置项 | 类型 | 默认值 | 说明 |
+|--------|------|--------|------|
+| 统计工具 | 下拉选择 | 不启用 | 可选：不启用 / Google Analytics / Umami Analytics |
+| Google Analytics 测量 ID | 输入框 | (空) | 格式如 G-XXXXXXXXXX，选择 Google Analytics 时必填 |
+| Umami 脚本地址 | 输入框 | (空) | 如 https://umami.example.com/script.js，选择 Umami 时必填 |
+| Umami 网站 ID | 输入框 | (空) | 选择 Umami 时必填 |
+
 ---
 
 ## 文件结构
@@ -124,7 +134,9 @@ gridea-typography-theme/
 ├── config.json                    # 主题配置定义
 ├── assets/
 │   ├── fonts/                     # Font Awesome 字体文件
-│   ├── images/                    # favicon.png、pigeon.svg
+│   ├── media/
+│   │   ├── images/                # favicon.png、pigeon.svg
+│   │   └── preview.png            # 主题预览图
 │   ├── scripts/                   # jQuery、Bootstrap、typography.js
 │   └── styles/                    # 主题样式（light / dark）、动画
 └── templates/

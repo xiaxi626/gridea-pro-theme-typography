@@ -25,7 +25,7 @@ function updateSidebar() {
         sideBar.style.width = sidebarW + 'px';
         mainContainer.classList.add('col-sm-9');
     }
-}
+}// Firefox 正常，但 Edge 存在兼容性问题
 
 document.addEventListener('DOMContentLoaded', function() {
     stage = document.getElementById('stage');
