@@ -27,7 +27,7 @@
 | 自定义版权名称 | ✅ | 可开关，开启后用自定义文字替换站点名称 |
 | SEO 优化 | ✅ | Meta description / keywords、Open Graph、Twitter Card |
 | KaTeX 数学公式 | ✅ | 文章详情页引入 KaTeX CSS |
-| 入场动画 | ✅ | fadeInDown 动画 + jQuery Appear 滚动触发 |
+| 入场动画 | ✅ | fadeInDown 动画 + DOMContentLoaded 触发 |
 | 评论系统 | ⚠️ | 通过 Gridea Pro 运行时注入，**尚未独立验证** |
 | 自定义导航菜单 | ✅ | 支持自定义 menus，未配置时回退到默认导航 |
 | Google Analytics | ✅ | 支持 Google Analytics 统计|
@@ -77,7 +77,7 @@
 | RSS | Atom feed 声明和导航栏图标保留，新增 `rssEnabled` 开关 |
 | 文章分享 | Evernote / 微博 / Twitter 分享按钮保留 |
 | SEO Meta | description / keywords / Open Graph / Twitter Card 全部保留 |
-| 入场动画 | fadeInDown + jQuery Appear 保留 |
+| 入场动画 | fadeInDown + DOMContentLoaded 保留 |
 | 响应式布局 | Bootstrap 3 栅格 + 移动端页脚适配保留 |
 
 ---
@@ -172,7 +172,7 @@ gridea-typography-theme/
 | 模板引擎 | Jinja2 |
 | CSS 框架 | Bootstrap 3 |
 | 图标库 | Font Awesome |
-| JS 库 | jQuery 3.1.0、Bootstrap JS、jQuery Appear |
+| JS 库 | jQuery 3.1.0、Bootstrap JS |
 | 数学公式 | KaTeX 0.10.0 (CDN) |
 
 ---
@@ -182,10 +182,7 @@ gridea-typography-theme/
 | 项目 | 说明 |
 |------|------|
 | 评论系统 | 模板中仅放置了 `<div id="gridea-comments"></div>` 占位符，依赖 Gridea Pro 运行时注入评论组件，尚未在真实环境中验证评论的加载与交互是否正常 |
-| Memos 热力图 | 闪念页的 GitHub 风格热力图为纯 JS 实现，依赖 `memo.createdAtISO` 提供 ISO 格式日期，需确认 Gridea Pro 是否正确输出该字段 |
-| 自定义导航菜单 | 导航栏支持 `menus` 变量自定义菜单项，需确认 Gridea Pro 的菜单数据结构与模板中的 `menu.name` / `menu.link` 是否匹配 |
-| KaTeX 公式渲染 | 仅引入了 KaTeX CSS，JS 渲染引擎需 Gridea Pro 运行时提供，需确认公式页面是否正常渲染 |
-| 文章特色图片 | 首页列表使用 `post.feature` 展示特色图片，需确认 Gridea Pro 是否支持该字段 |
+| 自定义导航菜单 | 导航栏模板支持 `menus` 变量自定义菜单项（Jinja2 逻辑：若 `menus` 存在则渲染自定义菜单，否则回退到默认导航），需确认 Gridea Pro 运行时是否提供该变量及数据结构是否与模板中的 `menu.name` / `menu.link` 匹配 |
 
 ---
 

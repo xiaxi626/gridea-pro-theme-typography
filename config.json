@@ -1,7 +1,7 @@
 {
   "name": "typography",
-  "version": "1.1.0",
-  "author": "Makito (Ported to Gridea Pro)",
+  "version": "1.2.0",
+  "author": "Makito (Original), xiaxi626 (Migrated to Gridea Pro)",
   "engine": "jinja2",
   "templateEngine": "jinja2",
   "repository": "https://github.com/SumiMakito/hexo-theme-typography",
