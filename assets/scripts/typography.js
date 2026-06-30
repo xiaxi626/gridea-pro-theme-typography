@@ -1,16 +1,4 @@
 var stage;
-var siteNavShown = true;
-
-function triggerSiteNav() {
-    return;
-    if (siteNavShown) {
-        document.getElementById('site-nav').style.display = 'none';
-        siteNavShown = false;
-    } else {
-        document.getElementById('site-nav').style.display = 'block';
-        siteNavShown = true;
-    }
-}
 
 function updateSidebar() {
     var sideBar = document.getElementById('side-bar');

@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600");
 @keyframes fadein {
   from {
     opacity: 0;
@@ -540,6 +539,9 @@ figure .code pre {
   .soc {
     display: block !important;
   }
+  .share .soc {
+    display: inline !important;
+  }
   .site-nav-footer {
     display: none !important;
   }
@@ -677,6 +679,9 @@ figure .code pre {
   }
   .soc {
     display: block !important;
+  }
+  .share .soc {
+    display: inline !important;
   }
   .site-nav-footer {
     display: none !important;
